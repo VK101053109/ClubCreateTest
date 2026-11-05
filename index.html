@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ClubCreate | Welcome</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#111111">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body class="page-shell">
+<nav class="navbar navbar-inverse navbar-fixed-top site-nav">
+    <div class="page-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">ClubCreate</a>
+        </div>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="application.html">Apply for a club</a></li>
+                <li><a href="dashboard.html">Club Dashboard</a></li>
+                <li><a href="userlogin.html">User Login</a></li>
+                <li><a href="login.html">Admin Panel</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="page-container">
+    <section class="hero">
+        <div>
+            <p class="hero-eyebrow">ClubCreate</p>
+            <h1>Easy Applications and Get your own club today!</h1>
+            <p class="lead-copy">ClubCreate allows any student with their own great idea to apply to create their own club!</p>
+            <div class="hero-actions">
+                <a class="btn btn-accent" href="application.html">Start Your Application!</a>
+                <a class="btn btn-outline-accent" href="index.html#about">Learn About ClubCreate</a>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <h3>Create Club</h3>
+            <ul class="story-list">
+                <li>Easy to use</li>
+                <li>Creative</li>
+                <li>Open to All ideas</li>
+                <li>For any age group</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="section-heading">
+            <p class="section-kicker">Club Services</p>
+            <h2 class="section-title">What you can do with ClubCreate</h2>
+        </div>
+        <div class="metric-strip">
+            <div class="metric-card">
+                <strong>Create your own club</strong>
+                <span>You can apply any time and as much as you would like.</span>
+            </div>
+            <div class="metric-card">
+                <strong>Leadership</strong>
+                <span>Lead your own club and invite kids to join you!</span>
+            </div>
+            <div class="metric-card">
+                <strong>Explore and Get involved</strong>
+                <span>You can explore new clubs in the dashboard to get involved.</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading">
+            <p class="section-kicker">Getting Started</p>
+            <h2 class="section-title">Three simple steps.</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>1. Create an Account</h3>
+                <p>Put your required credentials in and get started.</p>
+            </div>
+            <div class="contact-card">
+                <h3>2. Submit Details</h3>
+                <p>Create a detailed application and wait for review.</p>
+            </div>
+            <div class="contact-card">
+                <h3>3. Explore Dashboard</h3>
+                <p>Review your request after submitting.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-band">
+        <strong>ClubCreate |</strong> KANJ NextGen
+    </div>
+</main>
+
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+            .register("service-worker.js", { updateViaCache: "none" })
+            .then(registration => registration.update())
+            .catch(() => {});
+    }
+</script>
+</body>
+</html>

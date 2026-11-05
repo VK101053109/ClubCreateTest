@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | ClubCreate</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#111111">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script defer src="dashboard.js"></script>
+</head>
+<body class="page-shell">
+<nav class="navbar navbar-inverse navbar-fixed-top site-nav">
+    <div class="page-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">ClubCreate</a>
+        </div>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="application.html">Apply to create</a></li>
+                <li><a href="userlogin.html">User Login</a></li>
+                <li><a href="login.html">Admin</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="page-container">
+    <section class="hero">
+        <div>
+            <p class="hero-eyebrow">Dashboard</p>
+            <h1>Your application requests</h1>
+            <p class="lead-copy">Review your submitted applications below. You can add another application or remove your applications.</p>
+        </div>
+        <div class="summary-card" id="applicationSummary">
+            <h3>Latest Application</h3>
+            <p class="form-help">Loading application details...</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading">
+            <p class="section-kicker">Saved Applications</p>
+            <h2 class="section-title">Your Applications (<span id="applicationCount">0</span>)</h2>
+        </div>
+        <div class="applications-toolbar">
+            <a class="btn btn-accent" href="application.html">
+                <i class="fa fa-plus"></i>
+                Make Another Application
+            </a>
+            <button type="button" id="clearApplicationsButton" class="btn btn-outline-accent">
+                <i class="fa fa-trash"></i>
+                Delete all
+            </button>
+        </div>
+        <div id="applicationsList" class="applications-board">
+            <div class="empty-state">Loading applications...</div>
+        </div>
+    </section>
+
+    <div class="footer-band">
+        <strong>ClubCreate</strong> saved application page.
+    </div>
+</main>
+
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+            .register("service-worker.js", { updateViaCache: "none" })
+            .then(registration => registration.update())
+            .catch(() => {});
+    }
+</script>
+</body>
+</html>
