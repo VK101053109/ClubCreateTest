@@ -15,11 +15,10 @@
         target.className = type ? "message-line " + type : "message-line";
     }
 
-    function getSessionUser() {
-        return supabaseClient.auth.getSession().then(function (result) {
-            if (result.error) throw result.error;
-            return result.data.session ? result.data.session.user : null;
-        });
+    async function getSessionUser() {
+        const { data: { user} } = await supabase.auth.getUser();
+        if (!user) return null;
+        return user;
     }
 
     function buildApplication(user) {
