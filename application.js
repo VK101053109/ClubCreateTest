@@ -1,26 +1,21 @@
 (function () {
     "use strict";
-
     const tableName = "club_applications";
-
     function readField(id) {
         const element = document.getElementById(id);
         return element ? element.value.trim() : "";
     }
-
     function setMessage(text, type) {
         const target = document.getElementById("formMessage");
         if (!target) return;
         target.textContent = text;
         target.className = type ? "message-line " + type : "message-line";
     }
-
     async function getSessionUser() {
         const { data: { user} } = await supabase.auth.getUser();
         if (!user) return null;
         return user;
     }
-
     function buildApplication(user) {
         return {
             applicant_id: user.id,
@@ -30,7 +25,6 @@
             status: "pending"
         };
     }
-
     function validateApplication(application) {
         if (!application.proposed_name) {
             setMessage("Enter a name for your club.", "message-error");
@@ -46,7 +40,6 @@
         }
         return true;
     }
-
     function submitApplication(form) {
         setMessage("Submitting application...");
         getSessionUser()
@@ -68,7 +61,6 @@
                 setMessage(error.message || "Could not submit application. Please try again.", "message-error");
             });
     }
-
     document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById("applicationForm");
         if (!form) return;
