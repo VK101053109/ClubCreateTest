@@ -7,7 +7,7 @@
         const button = document.getElementById("loginButton");
         const message = document.getElementById("message");
 
-        // If already logged in, go straight to admin.
+        // If logged in, go straight to admin dashboard :D
         supabaseClient.auth.getSession().then(function (result) {
             if (result.data.session) {
                 window.location.href = "admin.html";

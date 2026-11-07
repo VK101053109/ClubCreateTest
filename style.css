@@ -1,14 +1,9 @@
 :root {
-    --bg-start: #eff7ee;
-    --bg-mid: #d7ead2;
-    --bg-end: #f6f2e7;
-    --surface: rgba(255, 255, 255, 0.86);
-    --text: #17301f;
-    --muted: #577061;
-    --primary: #166a3d;
-    --primary-dark: #104427;
-    --border: rgba(23, 48, 31, 0.12);
-    --shadow-soft: 0 14px 30px rgba(14, 36, 22, 0.08);
+    --bg-start: #0a0f0c !important;
+    --bg-mid: #111a14 !important;
+    --bg-end: #090b10 !important;
+    --text: #ffffff !important;
+    --primary: #ffffff !important;
 }
 
 * {
@@ -19,15 +14,128 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+body, body.page-shell {
     margin: 0;
     min-height: 100vh;
-    color: var(--text);
+    color: #ffffff;
     font-family: "Segoe UI", "Trebuchet MS", sans-serif;
     background:
-        radial-gradient(circle at top left, rgba(255, 0, 0, 0.2), transparent 38%),
-        radial-gradient(circle at right 15%, rgba(255,0,0, 0.14), transparent 28%),
-        linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 48%, var(--bg-end) 100%);
+            radial-gradient(circle at top left, rgba(235, 45, 45, 0.45), transparent 45%),
+            radial-gradient(circle at right 20%, rgba(45, 235, 140, 0.4), transparent 45%),
+            linear-gradient(135deg, #0a0f0c 0%, #111a14 48%, #090b10 100%) !important;
+    background-attachment: fixed !important;
+}
+
+.summary-card, .metric-card, .contact-card, .glass, form, .form-card, .form-grid {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 16px !important;
+    background: rgba(255, 255, 255, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9) !important;
+    padding: 30px !important;
+    color: #111111 !important;
+    -webkit-backdrop-filter: blur(40px) brightness(140%) saturate(120%) !important;
+    backdrop-filter: blur(40px) brightness(140%) saturate(120%) !important;
+}
+
+.summary-card::before, .metric-card::before, .contact-card::before, .glass::before, form::before, .form-card::before, .form-grid::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.2) !important;
+    -webkit-backdrop-filter: blur(40px) brightness(140%) saturate(120%) !important;
+    backdrop-filter: blur(40px) brightness(140%) saturate(120%) !important;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.summary-card::after, .metric-card::after, .contact-card::after, .glass::after, form::after, .form-card::after, .form-grid::after {
+    content: "";
+    position: absolute;
+    top: -65%;
+    left: -65%;
+    width: 230%;
+    height: 230%;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0) 70%);
+    animation: appleLiquidRefract 14s ease-in-out infinite alternate;
+}
+
+form input, form select, .form-card input, .form-card select, .form-grid input, .form-grid select {
+    width: 100% !important;
+    padding: 10px 14px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: #111111 !important;
+    border-radius: 8px !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+form textarea, .form-card textarea, .form-grid textarea {
+    width: 100% !important;
+    min-height: 100px !important;
+    padding: 12px 14px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: #111111 !important;
+    border-radius: 8px !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+form select option, .form-card select option, .form-grid select option {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+}
+
+form input::placeholder, form textarea::placeholder, .form-card input::placeholder, .form-card textarea::placeholder, .form-grid input::placeholder, .form-grid textarea::placeholder {
+    color: #555555 !important;
+}
+
+.btn-accent {
+    display: block !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: max-content !important;
+    max-width: max-content !important;
+    height: auto !important;
+    padding: 10px 22px !important;
+    background: #111111 !important;
+    color: #ffffff !important;
+    border-radius: 99px !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    margin-top: 25px !important;
+    border: none !important;
+    font-weight: 600;
+}
+
+#signupButton, .btn-outline-accent {
+    display: block !important;
+    width: max-content !important;
+    margin: 16px auto 0 auto !important;
+    text-align: center !important;
+    position: relative !important;
+    transform: none !important;
+}
+
+.hero-eyebrow, .lead-copy, label {
+    color: #ffffff !important;
+}
+
+h1 {
+    color: #ffffff !important;
+}
+
+@keyframes appleLiquidRefract {
+    0% { transform: translate(-5%, -8%) scale(1); }
+    50% { transform: translate(3%, 5%) scale(1.05); }
+    100% { transform: translate(-8%, 3%) scale(0.96); }
 }
 
 img {

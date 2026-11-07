@@ -62,9 +62,14 @@
                         <label for="proposed_name">Club Name</label>
                         <input id="proposed_name" class="form-control" type="text" placeholder="Enter your club name">
                     </div>
-                    <div class="form-group" style="grid-column:1/-1;">
-                        <label for="club_purpose">Club Purpose</label>
-                        <input id="club_purpose" class="form-control" type="text" placeholder="What is your club for?">
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label for="leader">Select Club Leader</label>
+                        <select id="leader">
+                            <option value="none">Select</option>
+                            <option value="You">You</option>
+                            <option value="You do not have a leader">You do not have a leader</option>
+                            <option value="You know of someone who can be leader">You know of someone who can be leader</option>
+                        </select>
                     </div>
                     <div class="form-group" style="grid-column:1/-1;">
                         <label for="proposed_description">Club Idea</label>

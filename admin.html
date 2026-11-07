@@ -29,12 +29,14 @@
     </div>
 </nav>
 
+
 <main class="page-container">
     <section class="section">
         <div class="section-heading">
             <p class="section-kicker">ADMIN PANEL</p>
             <h1 class="section-title">Manage Applications</h1>
         </div>
+
 
         <div class="admin-stats">
             <div class="admin-stat">
@@ -51,6 +53,7 @@
             </div>
         </div>
 
+
         <div class="hero-actions">
             <button id="refreshApplicationsButton" class="btn btn-outline-accent">
                 <i class="fa fa-refresh"></i>
@@ -62,6 +65,7 @@
             </button>
         </div>
 
+
         <div class="admin-controls">
             <input
                     id="applicationSearch"
@@ -70,21 +74,25 @@
                     placeholder="Search applications...">
         </div>
 
+
         <div class="admin-meta">
             <div id="databaseStatus" class="admin-meta-item">Checking Database...</div>
             <div id="visibleCount" class="admin-meta-item">Showing 0 Applications</div>
         </div>
+
 
         <div id="adminApplicationsList" class="applications-board">
             <div class="empty-state">Loading Applications...</div>
         </div>
     </section>
 
+
     <div class="footer-band">
         <strong>ClubCreate</strong>
         Admin Dashboard
     </div>
 </main>
+
 
 <script>
     if ("serviceWorker" in navigator) {
@@ -96,3 +104,4 @@
 </script>
 </body>
 </html>
+
